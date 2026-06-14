@@ -1,0 +1,30 @@
+<svg width="500" height="200" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+
+<rect width="500" height="200" fill="white"></rect>
+
+<!-- 魚の目（Kの上部） -->
+<circle cx="110" cy="70" r="6" fill="#111"></circle>
+
+<!-- K（魚の骨格） -->
+<path d="
+M120 40
+L120 160
+M120 100
+L200 40
+M120 100
+L200 160
+" stroke="#111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+
+<!-- 流線（魚の動き） -->
+<path d="
+M90 100
+C140 40, 260 40, 340 100
+C260 160, 140 160, 90 100
+Z" fill="none" stroke="#111" stroke-width="3" opacity="0.6"></path>
+
+<!-- KINKIN文字 -->
+<text x="230" y="115" font-size="48" font-family="Arial Black, sans-serif" fill="#111" letter-spacing="2">
+INKIN
+</text>
+
+</svg>
