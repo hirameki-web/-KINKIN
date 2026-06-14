@@ -8,115 +8,263 @@
 
 <style>
 
+:root{
+    --gold:#D4AF37;
+    --black:#000000;
+    --dark:#050505;
+    --gray:#999999;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:Arial,sans-serif;
-    background:#0f172a;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--black);
     color:white;
     line-height:1.8;
 }
 
 header{
-    background:#111827;
-    padding:20px;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(0,0,0,0.95);
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    padding:25px 80px;
 }
 
 .logo img{
-    height:80px;
-    width:auto;
+    height:65px;
+}
+
+nav{
+    display:flex;
+    gap:40px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
 }
 
 .hero{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
     text-align:center;
-    padding:100px 20px;
+
+    padding:0 20px;
 }
 
 .hero h1{
-    font-size:4rem;
-    margin-bottom:10px;
+
+    font-size:8rem;
+    letter-spacing:12px;
+
+    color:var(--gold);
+
+    margin-bottom:30px;
 }
 
 .hero p{
-    font-size:1.2rem;
-    color:#cbd5e1;
+
+    color:#cfcfcf;
+
+    font-size:1.6rem;
+
+    margin-bottom:40px;
 }
 
 .btn{
+
     display:inline-block;
-    margin-top:30px;
-    padding:12px 30px;
-    background:#facc15;
+
+    background:var(--gold);
+
     color:black;
+
+    padding:18px 50px;
+
+    border-radius:50px;
+
     text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    opacity:.9;
 }
 
 .section{
-    padding:80px 20px;
+
     max-width:1200px;
+
     margin:auto;
+
+    padding:120px 20px;
 }
 
 .section h2{
+
     text-align:center;
-    margin-bottom:40px;
-    color:#facc15;
+
+    color:var(--gold);
+
+    font-size:2.5rem;
+
+    margin-bottom:60px;
+
+    letter-spacing:3px;
 }
 
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
 }
 
 .card{
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
+
+    background:#0b0b0b;
+
+    border:1px solid #222;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    transition:.3s;
 }
 
-.dark{
-    background:#111827;
+.card:hover{
+
+    border-color:var(--gold);
+
+    transform:translateY(-5px);
 }
 
-.spots{
+.card h3{
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+}
+
+.card p{
+
+    color:#cccccc;
+}
+
+.about{
+
+    text-align:center;
+
+    color:#cccccc;
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:1.1rem;
+}
+
+.field-list{
+
     display:flex;
+
     justify-content:center;
-    gap:15px;
+
     flex-wrap:wrap;
-    margin-bottom:20px;
+
+    gap:15px;
 }
 
-.spots div{
-    background:#1e293b;
-    padding:10px 20px;
-    border-radius:8px;
+.field-list div{
+
+    border:1px solid var(--gold);
+
+    color:var(--gold);
+
+    padding:12px 24px;
+
+    border-radius:50px;
 }
 
 footer{
+
     text-align:center;
-    padding:30px;
-    background:#111827;
+
+    padding:40px;
+
+    border-top:1px solid #111;
+
+    color:#777;
+}
+
+@media(max-width:768px){
+
+header{
+
+    padding:20px;
+    flex-direction:column;
+    gap:20px;
+}
+
+nav{
+
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+
+    font-size:4rem;
+}
+
+.hero p{
+
+    font-size:1.1rem;
+}
 }
 
 </style>
-
 </head>
 
 <body>
@@ -124,15 +272,15 @@ footer{
 <header>
 
 <div class="logo">
-    <img src="logo.svg" alt="KINKIN">
+<img src="logo.svg" alt="KINKIN">
 </div>
 
 <nav>
-    <a href="#about">ABOUT</a>
-    <a href="#products">PRODUCTS</a>
-    <a href="#field">FIELD TEST</a>
-    <a href="#blog">BLOG</a>
-    <a href="#contact">CONTACT</a>
+<a href="#about">ABOUT</a>
+<a href="#products">PRODUCTS</a>
+<a href="#field">FIELD TEST</a>
+<a href="#blog">BLOG</a>
+<a href="#contact">CONTACT</a>
 </nav>
 
 </header>
@@ -142,11 +290,11 @@ footer{
 <h1>KINKIN</h1>
 
 <p>
-Offshore Fishing Gear & Field Test
+Built On Real Fishing.
 </p>
 
 <a href="#blog" class="btn">
-BLOG
+FIELD REPORT
 </a>
 
 </section>
@@ -155,14 +303,16 @@ BLOG
 
 <h2>ABOUT</h2>
 
-<p style="text-align:center;">
+<div class="about">
+
 KINKINは実釣主義のオフショアフィッシングブランドです。<br>
-銭洲・相模湾・外房・伊豆諸島を中心に活動しています。
-</p>
+銭洲・相模湾・伊豆諸島を中心に活動し、ジギング・キャスティング・遠征釣行のリアルな情報を発信しています。
+
+</div>
 
 </section>
 
-<section id="products" class="section dark">
+<section id="products" class="section">
 
 <h2>PRODUCTS</h2>
 
@@ -196,20 +346,18 @@ KINKINは実釣主義のオフショアフィッシングブランドです。<b
 
 <h2>FIELD TEST</h2>
 
-<div class="spots">
+<div class="field-list">
+
 <div>銭洲</div>
 <div>相模湾</div>
-<div>外房</div>
 <div>伊豆諸島</div>
-</div>
+<div>外房</div>
 
-<p style="text-align:center;">
-実釣から生まれる製品開発。
-</p>
+</div>
 
 </section>
 
-<section id="blog" class="section dark">
+<section id="blog" class="section">
 
 <h2>BLOG</h2>
 
@@ -218,21 +366,21 @@ KINKINは実釣主義のオフショアフィッシングブランドです。<b
 <div class="card">
 <h3>銭洲釣行レポート</h3>
 <p>
-釣果・海況・ヒットジグを掲載予定。
+明日の釣行後に釣果・ヒットジグ・海況を掲載予定。
 </p>
 </div>
 
 <div class="card">
-<h3>シーフロアコントロール vs ディープライナー</h3>
+<h3>シーフロアコントロール VS ディープライナー</h3>
 <p>
-実釣目線で徹底比較。
+水深・潮流・ターゲット別の使い分けを実釣目線で解説。
 </p>
 </div>
 
 <div class="card">
 <h3>おすすめジグ紹介</h3>
 <p>
-実際に魚を掛けたジグだけ紹介。
+実際に魚を掛けたジグのみ紹介。
 </p>
 </div>
 
@@ -244,9 +392,11 @@ KINKINは実釣主義のオフショアフィッシングブランドです。<b
 
 <h2>CONTACT</h2>
 
-<p style="text-align:center;">
-最新情報はSNSで発信予定。
-</p>
+<div class="about">
+
+Instagram・TikTok・YouTube準備中
+
+</div>
 
 </section>
 
@@ -254,82 +404,6 @@ KINKINは実釣主義のオフショアフィッシングブランドです。<b
 
 © 2026 KINKIN
 
-</footer>
-
-</body>
-</html>        <div class="card">
-            <h3>HOOK CASE</h3>
-            <p>Coming Soon</p>
-        </div>
-
-        <div class="card">
-            <h3>APPAREL</h3>
-            <p>Coming Soon</p>
-        </div>
-
-    </div>
-</section>
-
-<section id="field" class="section">
-    <h2>FIELD TEST</h2>
-    <section id="blog" class="section dark">
-    <h2>BLOG</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>銭洲釣行レポート</h3>
-            <p>
-                2026年○月○日。
-                カンパチ・キハダを狙って銭洲へ。
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>シーフロアコントロールとディープライナー比較</h3>
-            <p>
-                水深・潮流別の使い分けを解説。
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>おすすめジグ紹介</h3>
-            <p>
-                実際に魚を掛けたジグだけ紹介。
-            </p>
-        </div>
-
-    </div>
-</section>
-
-    <div class="spots">
-        <div>銭洲</div>
-        <div>相模湾</div>
-        <div>外房</div>
-        <div>伊豆諸島</div>
-    </div>
-
-    <p>
-        実釣から生まれる製品開発。
-    </p>
-</section>
-
-<section id="contact" class="section dark">
-    <h2>CONTACT</h2>
-
-    <p>
-        最新情報はSNSで発信予定。
-    </p>
-
-    <div class="social">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">YouTube</a>
-    </div>
-</section>
-
-<footer>
-    © 2026 KINKIN
 </footer>
 
 </body>
